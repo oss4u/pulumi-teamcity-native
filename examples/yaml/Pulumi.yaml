@@ -1,0 +1,16 @@
+name: provider-teamcity-native
+runtime: yaml
+plugins:
+  providers:
+    - name: teamcity
+      path: ../../bin
+
+resources:
+  myRandomResource:
+    type: teamcity:Random
+    properties:
+      length: 24
+
+outputs:
+  output:
+    value: ${myRandomResource.result}

@@ -1,0 +1,6 @@
+name: provider-teamcity-native
+runtime: dotnet
+plugins:
+  providers:
+    - name: teamcity
+      path: ../../bin

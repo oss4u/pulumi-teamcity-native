@@ -1,0 +1,6 @@
+name: provider-teamcity-native
+runtime: go
+plugins:
+  providers:
+    - name: teamcity
+      path: ../../bin
