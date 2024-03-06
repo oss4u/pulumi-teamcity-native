@@ -1,7 +1,7 @@
 import * as pulumi from "@pulumi/pulumi";
-import * as xyz from "@pulumi/xyz";
+import * as teamcity from "@oss4u/teamcity";
 
-const myRandomResource = new xyz.Random("myRandomResource", {length: 24});
+const myRandomResource = new teamcity.Random("myRandomResource", {length: 24});
 export const output = {
     value: myRandomResource.result,
 };
