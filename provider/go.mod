@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-xyz/provider
+module github.com/oss4u/pulumi-teamcity-native/provider
 
 go 1.21
 
