@@ -11,11 +11,11 @@ _utilities.register(
     resource_modules="""
 [
  {
-  "pkg": "xyz",
+  "pkg": "teamcity",
   "mod": "index",
-  "fqn": "pulumi_xyz",
+  "fqn": "pulumi_teamcity",
   "classes": {
-   "xyz:index:Random": "Random"
+   "teamcity:index:Random": "Random"
   }
  }
 ]
@@ -23,9 +23,9 @@ _utilities.register(
     resource_packages="""
 [
  {
-  "pkg": "xyz",
-  "token": "pulumi:providers:xyz",
-  "fqn": "pulumi_xyz",
+  "pkg": "teamcity",
+  "token": "pulumi:providers:teamcity",
+  "fqn": "pulumi_teamcity",
   "class": "Provider"
  }
 ]

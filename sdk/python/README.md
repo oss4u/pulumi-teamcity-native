@@ -4,7 +4,7 @@ This repository is a boilerplate showing how to create and locally test a native
 
 ## Authoring a Pulumi Native Provider
 
-This boilerplate creates a working Pulumi-owned provider named `teamcity`.
+This boilerplate creates a working Pulumi-owned provider named `Teamcity`.
 It implements a random number generator that you can [build and test out for yourself](#test-against-the-example) and then replace the Random code with code specific to your provider.
 
 
@@ -23,7 +23,7 @@ If you are not using VSCode, you will need to ensure the following tools are ins
 * [.NET](https://dotnet.microsoft.com/download)
 
 
-### Test the boilerplate Teamcity provider before making changes
+### Build & test the boilerplate Teamcity provider
 
 1. Create a new Github CodeSpaces environment using this repository.
 1. Open a terminal in the CodeSpaces environment.
@@ -65,7 +65,7 @@ This will:
    
 ```bash
 $ cd examples/simple
-$ yarn link @pulumi/teamcity
+$ yarn link @oss4u/teamcity
 $ yarn install
 $ pulumi stack init test
 $ pulumi up

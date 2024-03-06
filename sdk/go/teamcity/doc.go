@@ -1,2 +1,2 @@
-// Package xyz exports types, functions, subpackages for provisioning xyz resources.
-package xyz
+// Package teamcity exports types, functions, subpackages for provisioning teamcity resources.
+package teamcity

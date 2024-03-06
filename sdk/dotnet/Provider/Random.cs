@@ -7,9 +7,9 @@ using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
 
-namespace Pulumi.Teamcity
+namespace Pulumi.Teamcity.Provider
 {
-    [TeamcityResourceType("teamcity:index:Random")]
+    [TeamcityResourceType("teamcity:provider:Random")]
     public partial class Random : global::Pulumi.CustomResource
     {
         [Output("length")]
@@ -27,12 +27,12 @@ namespace Pulumi.Teamcity
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
         public Random(string name, RandomArgs args, CustomResourceOptions? options = null)
-            : base("teamcity:index:Random", name, args ?? new RandomArgs(), MakeResourceOptions(options, ""))
+            : base("teamcity:provider:Random", name, args ?? new RandomArgs(), MakeResourceOptions(options, ""))
         {
         }
 
         private Random(string name, Input<string> id, CustomResourceOptions? options = null)
-            : base("teamcity:index:Random", name, null, MakeResourceOptions(options, id))
+            : base("teamcity:provider:Random", name, null, MakeResourceOptions(options, id))
         {
         }
 
@@ -41,6 +41,7 @@ namespace Pulumi.Teamcity
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                PluginDownloadURL = "github://api.github.com/oss4u/pulumi-teamcity-native",
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.

@@ -20,7 +20,7 @@ import (
 
 	p "github.com/pulumi/pulumi-go-provider"
 	"github.com/pulumi/pulumi-go-provider/infer"
-	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
+	"github.com/pulumi/pulumi-go-provider/middleware/schema"
 )
 
 // Version is initialized by the Go linker to contain the semver of this build.
@@ -29,16 +29,48 @@ var Version string
 const Name string = "teamcity"
 
 func Provider() p.Provider {
-	// We tell the provider what resources it needs to support.
-	// In this case, a single custom resource.
-	return infer.Provider(infer.Options{
+	prv := infer.Provider(infer.Options{
+		Metadata: schema.Metadata{
+			DisplayName: "Teamcity",
+			License:     "Apache-2.0",
+			Repository:  "https://github.com/oss4u/pulumi-teamcity-native",
+			Publisher:   "Oss4u",
+			LanguageMap: map[string]any{
+				"nodejs": map[string]any{
+					"packageName": "@oss4u/teamcity",
+				},
+				"go": map[string]any{
+					"generateResourceContainerTypes": true,
+					"importBasePath":                 "github.com/oss4u/pulumi-teamcity-native/sdk/go/teamcity",
+				},
+				// "csharp": map[string]any{
+				// 	"rootNamespace": "Oss4u",
+				// },
+			},
+			PluginDownloadURL: "github://api.github.com/oss4u/pulumi-teamcity-native",
+		},
+		// Resources: []infer.InferredResource{
+		// 	infer.Resource[unbound.HostAliasOverride, unbound.HostAliasOverrideArgs, unbound.HostAliasOverrideState](),
+		// 	infer.Resource[unbound.HostOverride, unbound.HostOverrideArgs, unbound.HostOverrideState](),
+		// },
 		Resources: []infer.InferredResource{
 			infer.Resource[Random, RandomArgs, RandomState](),
 		},
-		ModuleMap: map[tokens.ModuleName]tokens.ModuleName{
-			"provider": "index",
-		},
+		// Config: infer.Config[*config.Config](),
 	})
+	//prv.DiffConfig = diff()
+	return prv
+
+	// We tell the provider what resources it needs to support.
+	// In this case, a single custom resource.
+	// return infer.Provider(infer.Options{
+	// 	Resources: []infer.InferredResource{
+	// 		infer.Resource[Random, RandomArgs, RandomState](),
+	// 	},
+	// 	ModuleMap: map[tokens.ModuleName]tokens.ModuleName{
+	// 		"provider": "index",
+	// 	},
+	// })
 }
 
 // Each resource has a controlling struct.

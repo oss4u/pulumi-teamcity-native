@@ -1,5 +1,5 @@
 {
-    "name": "@oss4u/teamcity",
+    "name": "@pulumi/teamcity",
     "version": "${VERSION}",
     "scripts": {
         "build": "tsc"

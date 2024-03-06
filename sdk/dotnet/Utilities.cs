@@ -53,6 +53,7 @@ namespace Pulumi.Teamcity
         {
             var dst = src ?? new global::Pulumi.InvokeOptions{};
             dst.Version = src?.Version ?? Version;
+            dst.PluginDownloadURL = src?.PluginDownloadURL ?? "github://api.github.com/oss4u/pulumi-teamcity-native";
             return dst;
         }
 
