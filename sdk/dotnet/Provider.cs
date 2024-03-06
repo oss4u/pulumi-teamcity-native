@@ -7,7 +7,7 @@ using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
 
-namespace Oss4u.teamcity
+namespace Pulumi.Teamcity
 {
     [TeamcityResourceType("pulumi:providers:teamcity")]
     public partial class Provider : global::Pulumi.ProviderResource
