@@ -1,13 +1,13 @@
-name: provider-xyz-native
+name: provider-teamcity-native
 runtime: yaml
 plugins:
   providers:
-    - name: xyz
+    - name: teamcity
       path: ../../bin
 
 resources:
   myRandomResource:
-    type: xyz:Random
+    type: teamcity:Random
     properties:
       length: 24
 

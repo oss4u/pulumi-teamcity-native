@@ -1,6 +1,6 @@
-name: provider-xyz-native
+name: provider-teamcity-native
 runtime: python
 plugins:
   providers:
-    - name: xyz
+    - name: teamcity
       path: ../../bin
