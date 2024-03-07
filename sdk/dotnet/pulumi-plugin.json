@@ -1,5 +1,0 @@
-{
-  "resource": true,
-  "name": "teamcity",
-  "server": "github://api.github.com/oss4u/pulumi-teamcity-native"
-}

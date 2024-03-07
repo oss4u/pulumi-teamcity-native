@@ -43,9 +43,9 @@ func Provider() p.Provider {
 					"generateResourceContainerTypes": true,
 					"importBasePath":                 "github.com/oss4u/pulumi-teamcity-native/sdk/go/teamcity",
 				},
-				// "csharp": map[string]any{
-				// 	"rootNamespace": "Oss4u",
-				// },
+				"csharp": map[string]any{
+					"rootNamespace": "Oss4u",
+				},
 			},
 			PluginDownloadURL: "github://api.github.com/oss4u/pulumi-teamcity-native",
 		},
@@ -58,7 +58,7 @@ func Provider() p.Provider {
 		},
 		// Config: infer.Config[*config.Config](),
 	})
-	//prv.DiffConfig = diff()
+	prv.DiffConfig = diff()
 	return prv
 
 	// We tell the provider what resources it needs to support.
@@ -71,6 +71,16 @@ func Provider() p.Provider {
 	// 		"provider": "index",
 	// 	},
 	// })
+}
+
+func diff() func(ctx p.Context, req p.DiffRequest) (p.DiffResponse, error) {
+	return func(ctx p.Context, req p.DiffRequest) (p.DiffResponse, error) {
+		return p.DiffResponse{
+			DeleteBeforeReplace: false,
+			HasChanges:          false,
+			DetailedDiff:        nil,
+		}, nil
+	}
 }
 
 // Each resource has a controlling struct.
