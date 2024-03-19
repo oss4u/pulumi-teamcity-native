@@ -46,7 +46,11 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Unshallow clone for tags
-        run: git fetch --prune --unshallow --tags
+        run: |
+          mkdir -p /__w/pulumi-teamcity-native/pulumi-teamcity-native
+          sudo chown -R $(whoami) /__w/pulumi-teamcity-native/pulumi-teamcity-native
+          git config --global --add safe.directory /__w/pulumi-teamcity-native/pulumi-teamcity-native
+          git fetch --prune --unshallow --tags
       - name: Install Go
         uses: actions/setup-go@v2
         with:
@@ -84,6 +88,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Unshallow clone for tags
+          mkdir -p /__w/pulumi-teamcity-native/pulumi-teamcity-native
+          sudo chown -R $(whoami) /__w/pulumi-teamcity-native/pulumi-teamcity-native
+          git config --global --add safe.directory /__w/pulumi-teamcity-native/pulumi-teamcity-native
         run: git fetch --prune --unshallow --tags
       - name: Install Go
         uses: actions/setup-go@v2
