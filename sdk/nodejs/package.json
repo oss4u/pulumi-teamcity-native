@@ -1,6 +1,7 @@
 {
     "name": "@oss4u/teamcity",
     "version": "${VERSION}",
+    "homepage": "https://github.com/oss4u/",
     "repository": "https://github.com/oss4u/pulumi-teamcity-native",
     "license": "Apache-2.0",
     "scripts": {

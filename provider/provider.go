@@ -36,6 +36,7 @@ func Provider() p.Provider {
 			License:     "Apache-2.0",
 			Repository:  "https://github.com/oss4u/pulumi-teamcity-native",
 			Publisher:   "Oss4u",
+			Homepage:    "https://github.com/oss4u/",
 			LanguageMap: map[string]any{
 				"nodejs": map[string]any{
 					"packageName": "@oss4u/teamcity",

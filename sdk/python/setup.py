@@ -22,6 +22,7 @@ setup(name='pulumi_teamcity',
       version=VERSION,
       long_description=readme(),
       long_description_content_type='text/markdown',
+      url='https://github.com/oss4u/',
       project_urls={
           'Repository': 'https://github.com/oss4u/pulumi-teamcity-native'
       },
