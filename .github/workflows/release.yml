@@ -123,8 +123,6 @@ jobs:
       - name: Generate SDK
         run: | 
           make ${{ matrix.language }}_sdk
-          ls -l
-          ls -l sdk/${{ matrix.language }}/bin/dist/ || true
       - name: Compress SDK folder
         run: tar -zcf sdk/${{ matrix.language }}.tar.gz -C sdk/${{ matrix.language }} .
       - name: Upload artifacts
@@ -132,22 +130,18 @@ jobs:
         with:
           name: ${{ matrix.language  }}-sdk.tar.gz
           path: ${{ github.workspace}}/sdk/${{ matrix.language }}.tar.gz
-      - name: Make Executable
-        run: |
-          ls -l sdk/* || true
       - if: ${{ matrix.language == 'python' && env.PUBLISH_PYPI == 'true' }}
         name: Copy python.tar.gz
         run: |
-          env
           mkdir -p dist/
           cp sdk/${{ matrix.language }}/bin/dist/*.tar.gz dist/
       - if: ${{ matrix.language == 'python' && env.PUBLISH_PYPI == 'true' }}
         name: Publish package to PyPI
-        uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
           password: ${{ env.PYPI_PASSWORD }}
-          packages_dir: dist/
+          packages-dir: dist/
       - if: ${{ matrix.language == 'nodejs' && env.PUBLISH_NPM == 'true' }}
         uses: JS-DevTools/npm-publish@v1
         with:
