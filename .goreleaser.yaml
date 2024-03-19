@@ -22,7 +22,7 @@ builds:
       - -X main.Version={{.Tag }}
     main: ./cmd/pulumi-resource-teamcity/
 changelog:
-  skip: true
+  disable: true
 release:
   disable: false
   prerelease: auto
