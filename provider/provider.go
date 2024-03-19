@@ -38,9 +38,9 @@ func Provider() p.Provider {
 			Publisher:   "Oss4u",
 			Homepage:    "https://github.com/oss4u/",
 			LanguageMap: map[string]any{
-				"python": map[string]any{
-					"Download-URL": "https://github.com/oss4u/pulumi-teamcity-native?VERSION",
-				},
+				// "python": map[string]any{
+				// 	"download_url": "https://github.com/oss4u/pulumi-teamcity-native?VERSION",
+				// },
 				"nodejs": map[string]any{
 					"packageName": "@oss4u/teamcity",
 				},

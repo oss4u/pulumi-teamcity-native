@@ -28,7 +28,7 @@ env:
   # NEED TO CHANGE TO USE THE CORRECT PASSWORD
   PYPI_PASSWORD: ${{ secrets.PYPI_TOKEN }}
   PYPI_USERNAME: "oss4u"
-  PYPI_REPOSITORY_URL: ""
+  PYPI_REPOSITORY_URL: "https://pypi.org/"
   PUBLISH_PYPI: true
 jobs:
   publish_binary:
