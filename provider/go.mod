@@ -1,6 +1,6 @@
 module github.com/oss4u/pulumi-teamcity-native/provider
 
-go 1.21
+go 1.20
 
 require (
 	github.com/pulumi/pulumi-go-provider v0.11.1
