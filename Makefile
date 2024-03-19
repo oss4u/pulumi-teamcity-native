@@ -5,7 +5,7 @@ OWNER            := oss4u
 PACKDIR          := sdk
 PROJECT          := github.com/oss4u/pulumi-${PACK}-native
 NODE_MODULE_NAME := @oss4u/${PACK}
-NUGET_PKG_NAME   := Oss4u.${PACK}
+NUGET_PKG_NAME   := Oss4u.Teamcity
 
 PROVIDER        := pulumi-resource-${PACK}
 VERSION         ?= $(shell pulumictl get version)

@@ -21,6 +21,7 @@ import (
 	p "github.com/pulumi/pulumi-go-provider"
 	"github.com/pulumi/pulumi-go-provider/infer"
 	"github.com/pulumi/pulumi-go-provider/middleware/schema"
+	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 )
 
 // Version is initialized by the Go linker to contain the semver of this build.
@@ -55,6 +56,9 @@ func Provider() p.Provider {
 		// },
 		Resources: []infer.InferredResource{
 			infer.Resource[Random, RandomArgs, RandomState](),
+		},
+		ModuleMap: map[tokens.ModuleName]tokens.ModuleName{
+			"provider": "index",
 		},
 		// Config: infer.Config[*config.Config](),
 	})
